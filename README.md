@@ -58,7 +58,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 ## [2/7] Run on Kaggle
 
 - **Import** → Create → Import Notebook → upload `churn_survival_analysis.ipynb`
-- **Input** → dataset `blastchar/telco-customer-churn` (found anywhere under `/kaggle/input`)
+- **Input** → dataset `blastchar/telco-customer-churn` (default path `/kaggle/input/datasets/blastchar/telco-customer-churn`, searched under `/kaggle/input` if it moves)
 - **Accelerator** → none (CPU, about 2 minutes)
 - **Settings** → top cell; `SAVE_FIGURES`, `SAVE_MODEL`, `LAUNCH_APP` are all `False` → nothing is written, no app is started
 
