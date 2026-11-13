@@ -60,6 +60,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 - **Import** → Create → Import Notebook → upload `churn_survival_analysis.ipynb`
 - **Input** → dataset `blastchar/telco-customer-churn` (default path `/kaggle/input/datasets/blastchar/telco-customer-churn`, searched under `/kaggle/input` if it moves)
 - **Accelerator** → none (CPU, about 2 minutes)
+- **Internet** → On: the first code cell runs `pip install lifelines` (not preinstalled on Kaggle)
 - **Settings** → top cell; `SAVE_FIGURES`, `SAVE_MODEL`, `LAUNCH_APP` are all `False` → nothing is written, no app is started
 
 ## [3/7] Who stays longer?
