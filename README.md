@@ -16,7 +16,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 
 **Question:** when do customers leave?
 
-**Answer:** early. The risk of leaving is 1.5 % in the first month and falls to 0.4 % a month by month 36; 15.7 % of customers are gone within a year, yet 59 % are still there after six years. Averages hide this: churners stayed 18 months on average, which says nothing about the 73 % still active.
+**Answer:** early. The smoothed risk of leaving is 1.5 % a month at the start (the raw month-1 count is 5.4 %: 380 of 7,032) and falls to 0.4 % a month by month 36; 15.7 % of customers are gone within a year, yet 59 % are still there after six years. Averages hide this: churners stayed 18 months on average, which says nothing about the 73 % still active.
 
 ![Kaplan-Meier](assets/02_kaplan_meier.png)
 
