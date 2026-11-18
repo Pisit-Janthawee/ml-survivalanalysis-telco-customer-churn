@@ -1,10 +1,10 @@
 # Customer Churn with Survival Analysis: When Will a Customer Leave?
 
-![Churn explorer app](assets/app_gradio.png)
+![Churn explorer app](assets/png/app_gradio.png)
 
 Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional hazards | Stratified Cox | Weibull AFT | XGBoost Cox | C-index | Calibration | RMST | Customer lifetime value | Gradio
 
-![What this project builds](assets/churn_overview.png)
+![What this project builds](assets/png/churn_overview.png)
 
 ## Objective
 
@@ -18,7 +18,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 
 **Answer:** early. The smoothed risk of leaving is 1.5 % a month at the start (the raw month-1 count is 5.4 %: 380 of 7,032) and falls to 0.4 % a month by month 36; 15.7 % of customers are gone within a year, yet 59 % are still there after six years. Averages hide this: churners stayed 18 months on average, which says nothing about the 73 % still active.
 
-![Kaplan-Meier](assets/02_kaplan_meier.png)
+![Kaplan-Meier](assets/png/02_kaplan_meier.png)
 
 **Question:** what changes the risk, and by how much?
 
@@ -32,7 +32,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 | Fiber internet (vs DSL) | 1.41 | 41 % more risk |
 | Paying by electronic check (vs bank transfer) | **1.89** | almost double the risk |
 
-![hazard ratios](assets/04_hazard_ratios.png)
+![hazard ratios](assets/png/04_hazard_ratios.png)
 
 **Question:** who should the retention team call first, and what is it worth?
 
@@ -44,7 +44,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 | + tech support | 11.9 |
 | on a one-year contract | 22.8 |
 
-![call list](assets/07_call_list.png)
+![call list](assets/png/07_call_list.png)
 
 ## [1/7] Data
 
@@ -53,7 +53,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 - **Cleaning** → 11 customers with tenure 0 have no bill yet → dropped (7,032 kept)
 - **Leak removed** → `TotalCharges` ≈ monthly charge × tenure (median ratio 1.000), so it would hand the model the duration it predicts
 
-![tenure](assets/01_tenure.png)
+![tenure](assets/png/01_tenure.png)
 
 ## [2/7] Run on Kaggle
 
@@ -68,11 +68,11 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 - **Kaplan-Meier by group** → every gap is real (log-rank p < 1e-100)
 - **Still a customer after 24 months** → month-to-month 58.6 % vs two-year 100 %; electronic check 62.4 % vs credit card 91.3 %; no tech support 65.3 % vs with support 91.7 %
 
-![groups](assets/03_km_groups.png)
+![groups](assets/png/03_km_groups.png)
 
 ## [4/7] Models
 
-![survival methods](assets/survival_methods.png)
+![survival methods](assets/png/survival_methods.png)
 
 | Model (20 % test customers) | C-index | First-year customers |
 |---|---|---|
@@ -90,7 +90,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 
 - predicted vs observed 12-month churn in 5 risk groups: 0.5 / 2 / 10 / 25 / 50 % vs 0 / 1 / 8 / 29 / 47 %
 
-![calibration](assets/05_calibration.png)
+![calibration](assets/png/05_calibration.png)
 
 ## [6/7] App
 
@@ -98,7 +98,7 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 - **Data** → `TELCO_CSV`, or `./data/`, or IBM's public copy is downloaded on first start (git-ignored); the stratified Cox model is rebuilt in a few seconds
 - **Output** → chance to stay 6 / 12 / 24 months from now (given the months already stayed), expected months, revenue at risk, comparison with a typical customer on the same contract
 
-![profiles](assets/06_profiles.png)
+![profiles](assets/png/06_profiles.png)
 
 ## [7/7] Next steps
 
@@ -110,4 +110,4 @@ Survival analysis | Censoring | Kaplan-Meier | Log-rank test | Cox proportional 
 |---|---|
 | `churn_survival_analysis.ipynb` | full notebook (Kaggle-ready) |
 | `app.py`, `requirements.txt` | Gradio churn explorer |
-| `assets/` | figures and editable draw.io diagrams |
+| `assets/png/` · `assets/drawio/` | figures (PNG) · editable draw.io diagrams |
